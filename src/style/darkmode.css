@@ -1,0 +1,20 @@
+/*
+*
+*   Author: Antonio Pelusi
+*   Website: https://www.antoniopelusi.com
+*   Source code: https://github.com/antoniopelusi/JavaFX-Dark-Theme
+*
+*/
+
+.root{
+    -fx-background-color: #daa520;
+    background-color: #daa520;
+}
+
+/* Label */
+.label{
+    -fx-text-fill: #f0f8ff;
+}
+.dark-background {
+    -fx-background-color: #333332;
+}

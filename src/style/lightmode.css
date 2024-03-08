@@ -1,0 +1,13 @@
+
+.root{
+    -fx-background-color: #2D2D30;
+    background-color: #2D2D30;
+}
+
+/* Label */
+.label{
+    -fx-text-fill: #AFB1B3;
+}
+.dark-background {
+    -fx-background-color: #233333;
+}
