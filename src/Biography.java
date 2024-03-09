@@ -18,7 +18,7 @@ public class Biography extends HBox {
 
     //Method
     public Biography() {
-        Label bioLabel = new Label("LinkedIn Profile:  ");
+        Label bioLabel = new Label("Web Profile:  ");
 
 
         bio = new TextField();
@@ -34,11 +34,11 @@ public class Biography extends HBox {
         bioLink.setOnAction(e -> {
 
             //Hyperlink path and exception
-            String linkedInURL2 = "https://www.linkedin.com/in/" + bio.getText();
+            String linkedInURL2 = bio.getText();
             try {
                 Desktop.getDesktop().browse(new URI(linkedInURL2));
             } catch (IOException | URISyntaxException ex) {
-                System.out.println("Error opening LinkedIn profile: " + ex.getMessage());
+                System.out.println("Error opening profile: " + ex.getMessage());
             }
         });
 
