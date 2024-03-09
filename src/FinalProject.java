@@ -85,6 +85,7 @@ public class FinalProject extends Application {
         Biography.setFontLabels(font);
         Education.setFontLabels(font);
         WorkExperience.setFontLabels(font);
+        Bio.setFontLabels(font);
 
     }
     //Launching argument

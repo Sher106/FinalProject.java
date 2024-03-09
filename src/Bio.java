@@ -14,16 +14,20 @@ import java.util.Scanner;
 
 public class Bio extends HBox {
     static Text content;
+    public Font font;
+
     //Method for LinkedIn Bio
     Bio() {
         Label bioLabel = new Label("Biography");  //Label
         Label noBio = new Label();
+
         content = new Text("");
         content.getStyleClass().add("text-style");
         content.setWrappingWidth(900);
         content.setTextAlignment(TextAlignment.CENTER);
         content.setTranslateX(50);
         content.setFont(Font.font("Calibre", FontWeight.BOLD, FontPosture.REGULAR, 14));
+        content.getText();
 
 
         Button uploadBio = new Button("Upload Biography");

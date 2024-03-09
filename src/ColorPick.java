@@ -10,7 +10,7 @@ import javafx.scene.paint.Paint;
 
 public class ColorPick extends HBox {
     //Declaring variables
-    static ColorPicker accentColor;
+    public static ColorPicker accentColor;
     Paint newColor;
 
     public ColorPick(){
@@ -38,9 +38,9 @@ public class ColorPick extends HBox {
 
     //Creating method to change color of text(doesn't really work though. problems reaching other class)
     public Paint getAccentColor() {
-        if (newColor != null) {
-            return accentColor.getValue();
-        }
+        //if (newColor != null) {
+       //     return accentColor.getValue();
+       // }
         return accentColor.getValue();
     }
 }

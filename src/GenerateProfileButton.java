@@ -35,6 +35,7 @@ public class GenerateProfileButton extends HBox {
     HBox hbox1, hboxToggle, hbox2, hbox3, hbox4;
     private boolean isDarkMode = false;
     Button darkModeButton, lightModeButton, back;
+    Rectangle rect;
 
     //Creating method to generated new window displaying information put in by the user
     public GenerateProfileButton() {
@@ -116,8 +117,9 @@ public class GenerateProfileButton extends HBox {
             profImg.setFitWidth(300); // Set the desired width
             profImg.setPreserveRatio(true); // Ensure the image ratio is preserved
         }
+
         //Creating border design of ImageView
-        Rectangle rect = new Rectangle(300, 220, null);
+        rect = new Rectangle(300, 220, null);
         rect.setStroke(Color.AQUAMARINE);
         rect.setStrokeWidth(6);
 
@@ -246,6 +248,9 @@ public class GenerateProfileButton extends HBox {
         Biography.bio.clear();
         WorkExperience.work.clear();
 
+    }
+    public void setStrokeColor(Color color) {
+        rect.setStroke(color);
     }
 }
 
