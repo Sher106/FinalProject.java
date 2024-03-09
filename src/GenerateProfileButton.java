@@ -205,8 +205,7 @@ public class GenerateProfileButton extends HBox {
     }
 
 
-
-    //Meth
+    //Method to return to previous window
     private void processHome(ActionEvent event) {
         if (event.getSource() == back) {
             newWindow.close();
@@ -246,7 +245,7 @@ public class GenerateProfileButton extends HBox {
         }
     }
 
-    //Method to clear form
+    //Method to clear forms text fields
     private void processClear(ActionEvent event) {
         Name.name.clear();
         Education.edu.clear();
