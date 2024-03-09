@@ -20,7 +20,7 @@ public class WorkExperience extends HBox {
         work.setAlignment(Pos.BASELINE_LEFT);
         work.getText();
 
-        HBox workBox = new HBox(workLabel, work);  //HBox to place textfield and label
+        HBox workBox = new HBox(workLabel, work);  //HBox to place TextField and label
         workBox.setPadding(new Insets(15, 15, 15, 25));
         workBox.setSpacing(10);
 

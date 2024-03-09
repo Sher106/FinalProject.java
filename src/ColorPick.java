@@ -28,7 +28,6 @@ public class ColorPick extends HBox {
 
         });
 
-
         HBox colBox = new HBox(accentLabel, accentColor);
         colBox.setPadding(new Insets(15,15,15,25));
         colBox.setSpacing(10);

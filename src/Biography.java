@@ -13,7 +13,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 public class Biography extends HBox {
-    //Declaring textfield so it can be accessed throughout method
+    //Declaring TextField so it can be accessed throughout method
     static TextField bio;
 
     //Method

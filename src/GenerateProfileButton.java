@@ -99,7 +99,9 @@ public class GenerateProfileButton extends HBox {
 
             }
         });
-        bioLink.setStyle("-fx-font-size: 14px;");  //hyperlink text size
+        bioLink.setStyle("-fx-font-size: 16px;");  //hyperlink text size
+        bioLink.setStyle("-fx-text-fill: black;");
+        //bioLink.setWrapText(true);
 
         workSet = new Label();
         workSet.setTranslateX(300);
@@ -171,6 +173,7 @@ public class GenerateProfileButton extends HBox {
 
         //Placing all elements in a VBox
         vbox2 = new VBox(hboxToggle, hbox4, imagePane, nameSet, birthdaySet, hbox1, eduSet, workSet, hbox3, Bio.content, hbox2);
+        vbox2.setSpacing(10);
         vbox2.setAlignment(Pos.CENTER_LEFT);
         vbox2.setStyle("-fx-background-color: teal");
         vbox2.setPrefSize(1000, 600);
@@ -234,11 +237,6 @@ public class GenerateProfileButton extends HBox {
 
             }
         }
-    }
-
-    public Label getBioSet() {
-        return bioSet;
-
     }
 
     //Method to clear form

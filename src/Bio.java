@@ -6,8 +6,7 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
-import javafx.scene.text.Font;
-import javafx.scene.text.Text;
+import javafx.scene.text.*;
 import javafx.stage.FileChooser;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -20,6 +19,12 @@ public class Bio extends HBox {
         Label bioLabel = new Label("Biography");  //Label
         Label noBio = new Label();
         content = new Text("");
+        content.getStyleClass().add("text-style");
+        content.setWrappingWidth(900);
+        content.setTextAlignment(TextAlignment.CENTER);
+        content.setTranslateX(50);
+        content.setFont(Font.font("Calibre", FontWeight.BOLD, FontPosture.REGULAR, 14));
+
 
         Button uploadBio = new Button("Upload Biography");
         uploadBio.setAlignment(Pos.BASELINE_LEFT);

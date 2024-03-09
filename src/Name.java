@@ -11,7 +11,7 @@ import javafx.scene.text.FontWeight;
 public class Name extends HBox {
     static TextField name;
 
-    //Method that takes name that's typed into textfield. Also, setting initial text font and positioning
+    //Method that takes name that's typed into TextField. Also, setting initial text font and positioning
     public Name() {
         Label inputLabel = new Label("What is your name?");
 
