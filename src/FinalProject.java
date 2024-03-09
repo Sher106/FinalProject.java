@@ -4,12 +4,10 @@
 ***********************************************************************************************************************/
 
 import javafx.application.Application;
-import javafx.application.HostServices;
 import javafx.collections.ObservableList;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.Hyperlink;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
