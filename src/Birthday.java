@@ -70,33 +70,22 @@ public class Birthday extends HBox {
         portfolioLayout.setPadding(new Insets(20));
 
 
-        // Create an ImageView and set the Image instance
+        // Create an ImageView and setting in ImageView.
         ImageView imageView = new ImageView(image2);
-       // imageView.setFitWidth(100);
-       // imageView.setPreserveRatio(true);
         imageView.setSmooth(true);
         imageView.setCache(true);
 
 
-        // Add the ImageView to the portfolio layout
+        // Add the ImageView to the portfolio layout. Also, adding portfolio content
         portfolioLayout.getChildren().addAll(
                 message,
-                new Label("Sign: " + monthImg.get(birthMonth)),
+                new Label("Sign: " + monthImg.get(birthMonth)), //Display image based on birth month
                 imageView
-        );
-
-
-        // Add portfolio content
-        portfolioLayout.getChildren().addAll(
-                //      new Label("Name: " + name),
-                new Label("Sign: " + monthImg.get(birthMonth)) // Display zodiac sign based on birth month
-                , imageView
-                // Add other portfolio content here based on user input
-                //  new Button("Start Over")
         );
 
     }
 
+    //Processing to get age and image associated with birth month
     private void processDateChoice(ActionEvent event) {
         birthDate = datePicker.getValue();
         current = LocalDate.now();
@@ -170,12 +159,11 @@ public class Birthday extends HBox {
         }
     }
 
-
+    //Method to change message font
     public static void setFontLabels(Font font) {
         if (message != null) {
             message.setFont(font);
         }
-
 
     }
 }

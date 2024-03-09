@@ -7,17 +7,16 @@ import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
-import javafx.application.HostServices;
-
 import java.awt.*;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
 public class Biography extends HBox {
+    //Declaring textfield so it can be accessed throughout method
     static TextField bio;
 
-
+    //Method
     public Biography() {
         Label bioLabel = new Label("LinkedIn Profile:  ");
 
@@ -27,28 +26,23 @@ public class Biography extends HBox {
         bio.setPrefWidth(200);
         bio.setAlignment(Pos.BASELINE_LEFT);
         bio.getText();
-        String linkedInURL = "https://www.linkedin.com/in/" + bio;
 
+        //Creating hyperlink
         Hyperlink bioLink = new Hyperlink();
 
-        //bioLink.
+        //bioLink
         bioLink.setOnAction(e -> {
+
+            //Hyperlink path and exception
             String linkedInURL2 = "https://www.linkedin.com/in/" + bio.getText();
             try {
                 Desktop.getDesktop().browse(new URI(linkedInURL2));
             } catch (IOException | URISyntaxException ex) {
                 System.out.println("Error opening LinkedIn profile: " + ex.getMessage());
             }
-           // HostServices hostServices = getHostServices();
-           // getHostServices().showDocument(bio);
-            //try {
-            //    java.awt.Desktop.getDesktop().browse(java.net.URI.create(linkedInURL));
-           // } catch (java.io.IOException ex) {
-            //    System.out.println("Error opening LinkedIn profile: " + ex.getMessage());
-            //}
         });
 
-
+        //HBox to place variables created. Also, positioning HBox
         HBox bioBox = new HBox(bioLabel, bio);
         bioBox.setPadding(new Insets(15, 15, 15, 25));
         bioBox.setSpacing(10);
@@ -56,6 +50,7 @@ public class Biography extends HBox {
         getChildren().addAll(bioBox);
     }
 
+    //Method to change bio font
     public static void setFontLabels(Font font) {
         if (bio != null) {
             bio.setFont(font);

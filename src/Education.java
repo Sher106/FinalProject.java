@@ -10,6 +10,7 @@ import javafx.scene.text.FontWeight;
 public class Education extends HBox {
     static TextField edu;
 
+    //Method for Education
     public Education() {
         Label eduLabel = new Label("Education: ");
 
@@ -26,6 +27,7 @@ public class Education extends HBox {
         getChildren().addAll(eduBox);
     }
 
+    //Setting font for education level
     public static void setFontLabels(Font font) {
         if (edu != null) {
             edu.setFont(font);

@@ -9,7 +9,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 
 public class ColorPick extends HBox {
-    //ColorPicker colorPick;
+    //Declaring variables
     static ColorPicker accentColor;
     Paint newColor;
 
@@ -18,18 +18,15 @@ public class ColorPick extends HBox {
 
         accentColor = new ColorPicker(Color.BLACK);
 
+        //Action method to change accent color
         accentColor.setOnAction( new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 Color newColor = accentColor.getValue();
                 accentLabel.setTextFill(newColor);
-
-
             }
 
         });
-
-
 
 
         HBox colBox = new HBox(accentLabel, accentColor);
@@ -38,15 +35,9 @@ public class ColorPick extends HBox {
 
         getChildren().addAll(colBox);
     }
-   // public static Paint getAccentColor(Paint newColor){
-    //    if (newColor != null){
-//GenerateProfileButton.nameSet.setTextFill(newColor);
-      //      return accentColor.getValue();
-            //return newColor;
-      //  }
-      //  return null;
-  //  }
 
+
+    //Creating method to change color of text(doesn't really work though. problems reaching other class)
     public Paint getAccentColor() {
         if (newColor != null) {
             return accentColor.getValue();

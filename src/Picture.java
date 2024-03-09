@@ -21,10 +21,11 @@ import java.util.logging.Logger;
 
     public class Picture extends HBox {
         static Image image;
+        //Method for Profile picture upload
         public Picture() {
             Label pictureLabel = new Label("Upload a Picture");
 
-            Button uploadPic = new Button("Upload Picture");
+            Button uploadPic = new Button("Upload Picture");  //Upload button
             uploadPic.setAlignment(Pos.BASELINE_LEFT);
 
 
@@ -35,11 +36,13 @@ import java.util.logging.Logger;
             img.setCache(true);
 
 
+            //Action method to open file explorer to select desires picture
             EventHandler<ActionEvent> picPush = new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
                     FileChooser picChooser = new FileChooser();
 
+                    //Filtering file type
                     FileChooser.ExtensionFilter extFilterJPG = new FileChooser.ExtensionFilter("JPG Files(*.jpg)", "*.JPG");
                     FileChooser.ExtensionFilter extFilterPNG = new FileChooser.ExtensionFilter("PNG Files(*.png)", "*.PNG");
 
@@ -70,6 +73,7 @@ import java.util.logging.Logger;
             getChildren().addAll(picBox);
         }
         public static Image getImage() {
+
             return image;
         }
     }

@@ -10,6 +10,7 @@ import javafx.scene.text.FontWeight;
 public class WorkExperience extends HBox {
     static TextField work;
 
+    //Method for work experience
     public WorkExperience() {
         Label workLabel = new Label("Work Experience: ");
 
@@ -19,13 +20,14 @@ public class WorkExperience extends HBox {
         work.setAlignment(Pos.BASELINE_LEFT);
         work.getText();
 
-        HBox workBox = new HBox(workLabel, work);
+        HBox workBox = new HBox(workLabel, work);  //HBox to place textfield and label
         workBox.setPadding(new Insets(15, 15, 15, 25));
         workBox.setSpacing(10);
 
         getChildren().addAll(workBox);
     }
 
+    //Method to change work experience font
     public static void setFontLabels(Font font) {
         if (work != null) {
             work.setFont(font);
