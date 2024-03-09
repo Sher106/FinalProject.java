@@ -70,27 +70,31 @@ public class GenerateProfileButton extends HBox {
         nameSet.setTranslateX(300);
         nameSet.setText("Name: " + Name.name.getText());
         nameSet.setFont(Name.name.getFont());
+        nameSet.setTextFill(Color.BLACK);
 
         birthdaySet = new Label();
         birthdaySet.setTranslateX(300);
-        birthdaySet.setText("Birthday: " + Birthday.message.getText());
+        birthdaySet.setText("Age: " + Birthday.message.getText());
         birthdaySet.setFont(Birthday.message.getFont());
+        birthdaySet.setTextFill(Color.BLACK);
 
         bioSet = new Label();
         bioSet.setTranslateX(300);
         bioSet.setAlignment(Pos.CENTER);
         bioSet.setText("LinkedIn: " + Biography.bio.getText());
         bioSet.setFont(Biography.bio.getFont());
+        bioSet.setTextFill(Color.BLACK);
 
         bioSet2 = new Label();
         bioSet2.setTranslateX(300);
         bioSet2.setText("Biography: " + Bio.content.getText());
-        //bioSet.setTextFill(accentColor.colorPick.getValue());
+
 
         eduSet = new Label();
         eduSet.setTranslateX(300);
         eduSet.setText("Education: " + Education.edu.getText());
         eduSet.setFont(Education.edu.getFont());
+        eduSet.setTextFill(Color.BLACK);
 
         //Trying to create hyperlink for LinkedIn profile
         Hyperlink bioLink = new Hyperlink( Biography.bio.getText());
@@ -108,6 +112,7 @@ public class GenerateProfileButton extends HBox {
         workSet.setTranslateX(300);
         workSet.setText(" Work Experience: " + WorkExperience.work.getText());
         workSet.setFont(WorkExperience.work.getFont());
+        workSet.setTextFill(Color.BLACK);
 
         //ImageView for profile picture. Also placing picture selected in ImageView
         profImg = new ImageView();
@@ -170,8 +175,8 @@ public class GenerateProfileButton extends HBox {
         hbox3.setAlignment(Pos.CENTER);
 
         hbox4 = new HBox(accentC);
-        getChildren().addAll(hbox4);
         hbox4.setAlignment(Pos.CENTER);
+        getChildren().addAll(hbox4);
 
         //Placing all elements in a VBox
         vbox2 = new VBox(hboxToggle, hbox4, imagePane, nameSet, birthdaySet, hbox1, eduSet, workSet, hbox3, Bio.content, hbox2);
