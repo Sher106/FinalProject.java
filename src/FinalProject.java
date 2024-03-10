@@ -19,7 +19,6 @@ public class FinalProject extends Application {
     //Variables being declared
     public static Font selectedFont;
     private ComboBox<String> fontComboBox;
- //   private Font selectedFont;
 
 
     @Override

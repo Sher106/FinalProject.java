@@ -13,13 +13,13 @@ public class ColorPick extends HBox {
     public static ColorPicker accentColor;
     Paint newColor;
 
-    public ColorPick(){
+    public ColorPick() {
         Label accentLabel = new Label("Choose an accent color?");
 
         accentColor = new ColorPicker(Color.BLACK);
 
         //Action method to change accent color
-        accentColor.setOnAction( new EventHandler<ActionEvent>() {
+        accentColor.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 Color newColor = accentColor.getValue();
@@ -29,20 +29,13 @@ public class ColorPick extends HBox {
         });
 
         HBox colBox = new HBox(accentLabel, accentColor);
-        colBox.setPadding(new Insets(15,15,15,25));
+        colBox.setPadding(new Insets(15, 15, 15, 25));
         colBox.setSpacing(10);
 
         getChildren().addAll(colBox);
     }
-
-
-    //Creating method to change color of text(doesn't really work though. problems reaching other class)
-    public Paint getAccentColor() {
-        //if (newColor != null) {
-       //     return accentColor.getValue();
-       // }
-        return accentColor.getValue();
-    }
 }
+
+
 
 
