@@ -18,7 +18,6 @@ import javafx.stage.Stage;
 public class FinalProject extends Application {
     //Variables being declared
     public static Font selectedFont;
-    public static Color selectedColor;
     private ComboBox<String> fontComboBox;
  //   private Font selectedFont;
 

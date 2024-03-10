@@ -10,7 +10,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
@@ -26,14 +25,11 @@ public class GenerateProfileButton extends HBox {
     VBox vbox2;
     static Label nameSet;
     Label bioSet, bioSet2, eduSet, workSet, birthdaySet;
-
     ImageView profImg;
-
+    ColorPicker colorPicker2;
     private Stage newWindow;
     Scene secondScene;
-
     HBox hbox1, hboxToggle, hbox2, hbox3, hbox4;
-    private boolean isDarkMode = false;
     Button darkModeButton, lightModeButton, back;
     Rectangle rect;
 
@@ -55,14 +51,10 @@ public class GenerateProfileButton extends HBox {
 
     //Action method for steps taken for information to be displayed in new scene
     private void processSubmit(ActionEvent event) {
-        ColorPick accentColor1 = new ColorPick();
-        Paint accentColorValue = accentColor1.getAccentColor();  //Trying to set TextFill based on what's in color picker.
-
 
         //Setting Profile Title Label
         Label accentC = new Label("Welcome to "+ Name.name.getText() + "'s Profile");
         accentC.setFont(Font.font("Calibre", FontWeight.BOLD, FontPosture.REGULAR, 24));
-        accentC.setTextFill(accentColorValue);
 
         //Creating labels and positioning them, so they can be displayed in the new window. Also calling on font method
         //so they can be adjusted based on font selection
@@ -106,7 +98,6 @@ public class GenerateProfileButton extends HBox {
         });
         bioLink.setStyle("-fx-font-size: 16px;");  //hyperlink text size
         bioLink.setStyle("-fx-text-fill: black;");
-        //bioLink.setWrapText(true);
 
         workSet = new Label();
         workSet.setTranslateX(300);
@@ -122,6 +113,18 @@ public class GenerateProfileButton extends HBox {
             profImg.setFitWidth(300); // Set the desired width
             profImg.setPreserveRatio(true); // Ensure the image ratio is preserved
         }
+
+        //Color Picker for Rectangle
+        colorPicker2 = new ColorPicker(Color.BLACK); // Default color is black
+        colorPicker2.setOnAction(this::processColorChange);
+
+        HBox colorPickerBox = new HBox(new Label("Stroke Color: "), colorPicker2);
+        colorPickerBox.setSpacing(10);
+        colorPickerBox.setTranslateX(350);
+        colorPickerBox.setPadding(new Insets(5));
+
+        getChildren().addAll(colorPickerBox); // Add color picker to UI
+
 
         //Creating border design of ImageView
         rect = new Rectangle(300, 220, null);
@@ -179,7 +182,7 @@ public class GenerateProfileButton extends HBox {
         getChildren().addAll(hbox4);
 
         //Placing all elements in a VBox
-        vbox2 = new VBox(hboxToggle, hbox4, imagePane, nameSet, birthdaySet, hbox1, eduSet, workSet, hbox3, Bio.content, hbox2);
+        vbox2 = new VBox(hboxToggle, colorPickerBox, hbox4, imagePane, nameSet, birthdaySet, hbox1, eduSet, workSet, hbox3, Bio.content, hbox2);
         vbox2.setSpacing(10);
         vbox2.setAlignment(Pos.CENTER_LEFT);
         vbox2.setStyle("-fx-background-color: teal");
@@ -212,6 +215,10 @@ public class GenerateProfileButton extends HBox {
         }
     }
 
+    private void processColorChange(ActionEvent event) {
+        Color selectedColor2 = colorPicker2.getValue();
+        setStrokeColor(selectedColor2);
+    }
     //Actioning dark mode method
     private void processDark(ActionEvent event) {
         if (event.getSource() == darkModeButton) {

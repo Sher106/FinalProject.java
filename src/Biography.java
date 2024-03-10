@@ -34,7 +34,7 @@ public class Biography extends HBox {
         bioLink.setOnAction(e -> {
 
             //Hyperlink path and exception
-            String linkedInURL2 = bio.getText();
+            String linkedInURL2 = "https://" + bio.getText();
             try {
                 Desktop.getDesktop().browse(new URI(linkedInURL2));
             } catch (IOException | URISyntaxException ex) {
